@@ -1,0 +1,64 @@
+:root {
+    --primary: purple;
+    --secondary: green;
+    --secondary-hover: green;
+    --pink: pink;
+}
+
+nav, footer { 
+    /* navbar and footer colours */
+    background-color: var(--primary);
+    color: var(--secondary);
+
+}
+
+.nav-link {
+    color: white;
+}
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border-color: transparent;
+}
+.bg-primary:hover {
+    background-color: var(--secondary-hover);
+}
+.nav-link:hover {
+    color: var(--secondary);
+}
+.navbar-toggler {
+    border: none !important;
+    box-shadow: none !important;
+}
+.bg-img {
+    background-image: url(../images/steve-busch-tHfRemjLK4M-unsplash.jpg);
+    min-height: 90vh;
+    height: auto;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.526); this is if you want to apply to your background image */
+    background: linear-gradient(var(--primary), var(--pink), var(--primary)), radial-gradient(circle 700px at 20% 30%, yellow, transparent), radial-gradient(circle 500px at 80% 70%, yellow, transparent);
+}
+
+body { 
+    background-color: var(--primary);
+}
+
+.bg-translucent {
+    background-color: #00000063;
+}
+textarea {
+    resize: none;
+}
+
+form a {
+    text-decoration: none;
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+form a:hover {
+    color: var(--secondary);
+}
