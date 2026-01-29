@@ -1,7 +1,8 @@
 
 // -------------------------------------GLOBAL VARIABLES------------------------------------------------------
 
-const url = "http://localhost:3000";
+//const url = "http://localhost:3000";
+const url = "https://todoapp25-13-qu4x.onrender.com"
 const taskForm = document.getElementById("taskForm");
 const toDoList = document.getElementById("toDoList");
 const completedList = document.getElementById("completedList");
