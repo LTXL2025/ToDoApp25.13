@@ -7,7 +7,17 @@ const mongoose = require("mongoose"); //Enables us to connect and interact with 
 const port = 3000; //Uses port number on device to serve the backend
 const app = express(); //using express.js to power our application or server
 // ---------------------------↓ MIDDLEWARE SETUP ↓ -----------------------------------------
+
 app.use(express.json()); //uses express in JSON format
+
+const corsOptions = {
+    origin: "https://to-do-app25-13-lac.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true
+};
+
+
+
 app.use(cors("*")); //Enables use of CORS - * means every domain is now allowed access this server to send and receive data - not secure
 // ---------------------------↓ DATABASE CONNECTION + APP STARTUP ↓ -----------------------------------------
 (async()=>{
