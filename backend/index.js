@@ -1,10 +1,10 @@
 // ---------------------------↓ SETTING UP DEPENDENCIES ↓ -----------------------------------------
-
+require("dotenv").config(); //load env variables into server before going live
 const express = require("express"); //enables the use of Express.js
 const cors = require("cors"); //Enable Cross Origin Resource Sharing
 const mongoose = require("mongoose"); //Enables us to connect and interact with the database
 // ---------------------------↓ iNITIAL APP CONFIGURATION ↓ -----------------------------------------
-const port = 3000; //Uses port number on device to serve the backend
+const port = process.env.PORT || 3000; //Uses port number on device to serve the backend
 const app = express(); //using express.js to power our application or server
 // ---------------------------↓ MIDDLEWARE SETUP ↓ -----------------------------------------
 
@@ -15,13 +15,17 @@ const corsOptions = {
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
 };
-
-app.use(cors("*")); //Enables use of CORS - * means every domain is now allowed access this server to send and receive data - not secure
+ //app.use(cors(corsOptions)); //Enables use of CORS
+app.use(cors("*")); // - * means every domain is now allowed access this server to send and receive data - not secure
 
 // -----------------------ROUTES ------------------------------------------
 
-const taskRoutes = require("./route/taskRoutes");
+const taskRoutes = require("./routes/taskRoutes");
+const mailRoutes = require("./routes/mailRoutes");
+
 app.use("/api/tasks", taskRoutes);
+app.use("/api/mail", mailRoutes);
+
 
 // ---------------------------↓ DATABASE CONNECTION + APP STARTUP ↓ -----------------------------------------
 //Immediately Invoked Function Expression (IIFE)
