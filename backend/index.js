@@ -36,16 +36,16 @@ app.use("/api/mail", mailRoutes);
         const Task = require("./models/task");
 
         await mongoose.connect("mongodb+srv://loanle001122_db_user:T0XaNVqOX3h3TaDy@to-do-app-2513.9xmtynp.mongodb.net/?appName=to-do-app-2513");
-        console.log("Database connected");
+        console.log("✅Database connected");
 
         await Task.syncIndexes();
-        console.log(`Indexes created!`);
+        console.log(`✅Indexes created!`);
 
         app.listen(port, () => {
-            console.log(`To Do App is live on port ${port}`);
+            console.log(`✅To Do App is live on port ${port}`);
         });
     } catch (err) {
-        console.error("Startup Error:", err);
+        console.error("❌Startup Error:", err);
         process.exit(1);
     }
     
